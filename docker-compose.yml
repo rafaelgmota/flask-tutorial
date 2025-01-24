@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000" # machine:container
+    volumes:
+      - .:/app #Copy current directory into /app in the container 

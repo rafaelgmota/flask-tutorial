@@ -1,0 +1,6 @@
+Course ebook: https://rest-apis-flask.teclado.com/
+Docker build: docker build -t rest-apis-flask-python  .
+Running the container with volumes for hot reloadin: docker run -dp 5000:5000 -w /app -v "$(pwd):/app" rest-apis-flask-python
+
+TODO: 
+* Put blocklist inside Redis
