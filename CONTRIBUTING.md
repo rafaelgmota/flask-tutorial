@@ -1,5 +1,16 @@
 # CONTRIBUTING
 
+## Initing virtual env
+```
+python -m venv .venv
+```
+
+## Docker compose build
+
+```
+docker compose up --build --force-recreate --no-deps web
+```
+
 ## How to build docker image
 
 ```

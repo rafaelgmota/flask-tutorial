@@ -2,6 +2,21 @@ services:
   web:
     build: .
     ports:
-      - "5000:5000" # machine:container
+      - "5000:80" # machine:container
     volumes:
       - .:/app #Copy current directory into /app in the container 
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+  db:
+    ports:
+      - "5430:5432"
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=myapp
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
